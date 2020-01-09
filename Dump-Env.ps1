@@ -8,8 +8,8 @@ Param(
 )
 
 if ($PSBoundParameters.ContainsKey('File')) {
-  Get-ChildItems env: | %{ "$($_.Name)=$($_.Value)" } | Out-String | %{ [Text.Encoding]::UTF8.GetBytes($_) } | Set-Content -Path $File -Encoding Byte
+  Get-ChildItem env: | %{ "$($_.Name)=$($_.Value)" } | Out-String | %{ [Text.Encoding]::UTF8.GetBytes($_) } | Set-Content -Path $File -Encoding Byte
 } else {
-  Get-ChildItems env: | %{ "$($_.Name)=$($_.Value)" }
+  Get-ChildItem env: | %{ "$($_.Name)=$($_.Value)" }
 }
 
