@@ -14,7 +14,7 @@ Param(
 begin {
   $script:lines = @()
   if ($PSBoundParameters.ContainsKey('File')) {
-    $script:lines = (Get-Conent $file) -as [string[]]
+    $script:lines = (Get-Content $file) -as [string[]]
   }
 }
 
